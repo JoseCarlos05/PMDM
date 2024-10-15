@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ejercicio1</string>
+    <string name="introText">Introduce un enlace</string>
+    <string name="textBoton">Comprobar</string>
+</resources>

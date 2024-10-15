@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ejercicio8</string>
+    <string-array name="colores">
+        <item>Rojo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+    </string-array>
+    <string name="textoColor">Texto de ejemplo</string>
+
+    <string name="izquierda">izquierda</string>
+    <string name="centro">centro</string>
+    <string name="derecha">derecha</string>
+
+    <string name="frase">Escribe una frase</string>
+    <string name="palabra">Escribe una palabra</string>
+    <string name="cambioFrase">Desordenar</string>
+    <string name="comprobar">Comprobar</string>
+</resources>
