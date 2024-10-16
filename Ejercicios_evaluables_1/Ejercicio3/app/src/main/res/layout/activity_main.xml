@@ -5,29 +5,47 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:background="@color/blue"
-        tools:ignore="Suspicious0dp" />
+        android:background="@color/blue"/>
 
     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:background="@color/white"
-        tools:ignore="Suspicious0dp" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/botonPant2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pantalla2"/>
+
+        <Button
+            android:id="@+id/botonPant3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pantalla3"/>
+
+        <Button
+            android:id="@+id/botonPant4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pantalla4"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:background="@color/blue"
-        tools:ignore="Suspicious0dp" />
+        android:background="@color/blue"/>
 
 </LinearLayout>
