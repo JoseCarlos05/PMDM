@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <TextView
+            android:id="@+id/vista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="60sp"
+            android:gravity="start|center"
+            android:paddingStart="32dp"
+            android:paddingEnd="0dp"
+            android:layout_span="4"
+            android:layout_weight="4"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/botonReset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/reset"
+            android:layout_span="4"
+            android:layout_weight="4"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/boton7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/uno"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/boton8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/dos"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/boton9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tres"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/botonDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Button"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</TableLayout>
