@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Ejercicio5</string>
+    <string name="cero">0</string>
     <string name="uno">1</string>
     <string name="dos">2</string>
     <string name="tres">3</string>
@@ -10,4 +11,10 @@
     <string name="ocho">8</string>
     <string name="nueve">9</string>
     <string name="reset">Restablecer valor</string>
+    <string name="dividir">/</string>
+    <string name="multiplicar">x</string>
+    <string name="restar">-</string>
+    <string name="sumar">+</string>
+    <string name="decimal">,</string>
+    <string name="igual">=</string>
 </resources>
