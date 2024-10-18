@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ejercicio6</string>
+    <string name="nomUsuario">Usuario</string>
+    <string name="correoUsuario">usuario1@gmail.com</string>
+    <string name="nombre">Nombre: Ramón</string>
+    <string name="apellido">Apllidos: García López</string>
+    <string name="telefono">Teléfono: +34 604837432</string>
+    <string name="descripcion">Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tempor lorem, sed posuere est. Nam quis arcu et justo.</string>
+</resources>
