@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         val botonMult = findViewById<Button>(R.id.botonMult)
         val botonDiv = findViewById<Button>(R.id.botonDiv)
         val botonIgual = findViewById<Button>(R.id.botonIgual)
+        val botonDec = findViewById<Button>(R.id.botonDec)
 
         botonReset.setOnClickListener {
             resultado.text = ""
@@ -87,24 +88,40 @@ class MainActivity : AppCompatActivity() {
         }
 
         botonSum.setOnClickListener {
-            resultado.text = resultado.text.toString() + "+"
+            if (!resultado.text.contains("+") && !resultado.text.contains("-") &&
+                !resultado.text.contains("/") && !resultado.text.contains("x")) {
+                resultado.text = resultado.text.toString() + "+"
+            }
         }
 
         botonResta.setOnClickListener {
-            resultado.text = resultado.text.toString() + "-"
+            if (!resultado.text.contains("+") && !resultado.text.contains("-") &&
+                !resultado.text.contains("/") && !resultado.text.contains("x")) {
+                resultado.text = resultado.text.toString() + "-"
+            }
         }
 
         botonMult.setOnClickListener {
-            resultado.text = resultado.text.toString() + "x"
+            if (!resultado.text.contains("+") && !resultado.text.contains("-") &&
+                !resultado.text.contains("/") && !resultado.text.contains("x")) {
+                resultado.text = resultado.text.toString() + "x"
+            }
         }
 
         botonDiv.setOnClickListener {
-            resultado.text = resultado.text.toString() + "/"
+            if (!resultado.text.contains("+") && !resultado.text.contains("-") &&
+                !resultado.text.contains("/") && !resultado.text.contains("x")) {
+                resultado.text = resultado.text.toString() + "/"
+            }
+        }
+
+        botonDec.setOnClickListener {
+            resultado.text = resultado.text.toString() + "."
         }
 
         botonIgual.setOnClickListener {
 
-            var solucion = 0.0
+            val solucion: Double
 
             if (resultado.text.contains("+")) {
                 val factores = resultado.text.split("+")
@@ -118,11 +135,17 @@ class MainActivity : AppCompatActivity() {
             } else if (resultado.text.contains("/")) {
                 val factores = resultado.text.split("/")
                 solucion = factores[0].toDouble() / factores[1].toDouble()
+            } else {
+                solucion = resultado.text.toString().toDouble()
             }
 
-            if (solucion.toString().substring(solucion.toString().length - 1, solucion.toString().length) = ".0")
+            var solucionStr = solucion.toString()
 
-            resultado.text = solucion.toString()
+            if (solucionStr.substring(solucionStr.length - 2, solucionStr.length) == ".0") {
+                solucionStr = solucionStr.replace(".0", "")
+            }
+
+            resultado.text = solucionStr
 
         }
     }
