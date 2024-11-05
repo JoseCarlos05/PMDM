@@ -5,15 +5,65 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="UseSwitchCompatOrMaterialXml">
 
-    <TextView
+    <EditText
+        android:id="@+id/formNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:hint="@string/formNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.150"/>
+
+    <EditText
+        android:id="@+id/formCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/formCorreo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.250"/>
+
+    <EditText
+        android:id="@+id/formTelef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/formTelef"
+        android:inputType="phone"
+        android:maxLength="9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.350"/>
+
+    <Switch
+        android:id="@+id/formSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switchText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.450"/>
+
+    <Button
+        android:id="@+id/formBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/boton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.550"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

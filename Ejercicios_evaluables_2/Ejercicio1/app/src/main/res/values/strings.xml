@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Ejercicio1</string>
+    <string name="formNombre">Introduce tu nombre</string>
+    <string name="formCorreo">Introduce tu correo electrónico</string>
+    <string name="formTelef">Introduce tu número de teléfono</string>
+    <string name="switchText">Suscríbete al boletín</string>
+    <string name="boton">Enviar</string>
 </resources>
