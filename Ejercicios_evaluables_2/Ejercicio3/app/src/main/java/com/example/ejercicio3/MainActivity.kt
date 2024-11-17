@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val tareas = arrayOf("Recoger", "Limpiar", "Reparar")
-
 
     }
 }
