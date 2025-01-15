@@ -125,6 +125,7 @@ class MainActivity : AppCompatActivity() {
                     mensaje.text = "Grabando..."
                     btnStop.isEnabled = true
                     btnRecord.isEnabled = false
+                    btnPlay.isEnabled = false
                 } catch (e: IOException) {
                     Log.e(LOG_TAG, "prepare() failed: ${e.message}")
                 } catch (e: IllegalStateException) {
