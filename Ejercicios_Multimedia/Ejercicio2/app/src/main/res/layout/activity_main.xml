@@ -37,10 +37,10 @@
         android:enabled="false"/>
 
     <TextView
-        android:id="@+id/statusMessage"
+        android:id="@+id/mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estado"
+        android:text=""
         android:paddingTop="20dp"
         android:textSize="16sp"/>
 

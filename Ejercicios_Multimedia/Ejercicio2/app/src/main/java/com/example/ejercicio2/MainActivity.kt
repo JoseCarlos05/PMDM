@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var mediaRecorder: MediaRecorder? = null
     private var mediaPlayer: MediaPlayer? = null
     private lateinit var audioFilePath: String
-    private lateinit var statusMessage: TextView
+    private lateinit var mensaje: TextView
     private lateinit var btnRecord: Button
     private lateinit var btnStop: Button
     private lateinit var btnPlay: Button
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
 
-        statusMessage = findViewById(R.id.statusMessage)
+        mensaje = findViewById(R.id.mensaje)
         btnRecord = findViewById(R.id.btnRecord)
         btnStop = findViewById(R.id.btnStop)
         btnPlay = findViewById(R.id.btnPlay)
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     private fun startPlaying() {
         mediaPlayer = MediaPlayer().apply {
             try {
-                statusMessage.text = "Reproduciendo audio..."
+                mensaje.text = "Reproduciendo audio..."
                 btnStop.isEnabled = false
                 btnRecord.isEnabled = false
                 btnPlay.isEnabled = false
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopPlaying() {
-        statusMessage.text = "Reproducción pausada"
+        mensaje.text = "Reproducción pausada"
         btnStop.isEnabled = false
         btnRecord.isEnabled = true
         btnPlay.isEnabled = true
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                     start()
                     Log.d(LOG_TAG, "Recording started")
 
-                    statusMessage.text = "Grabando..."
+                    mensaje.text = "Grabando..."
                     btnStop.isEnabled = true
                     btnRecord.isEnabled = false
                 } catch (e: IOException) {
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
     private fun stopRecording() {
         mediaRecorder?.apply {
             stop()
-            statusMessage.text = "Audio finalizado"
+            mensaje.text = "Audio finalizado"
             btnStop.isEnabled = false
             btnRecord.isEnabled = true
             btnPlay.isEnabled = true
