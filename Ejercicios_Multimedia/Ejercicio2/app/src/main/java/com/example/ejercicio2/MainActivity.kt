@@ -38,14 +38,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // Ajuste de padding para los sistemas de barras
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Establecer la ruta del archivo de audio
         if (externalCacheDir == null) {
             Log.e(LOG_TAG, "Invalid file path")
             return
@@ -53,10 +51,8 @@ class MainActivity : AppCompatActivity() {
         fileName = "${externalCacheDir?.absolutePath}/audiorecordtest.3gp"
         audioFilePath = fileName
 
-        // Solicitar permisos al inicio
         ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
 
-        // Configurar botones
         statusMessage = findViewById(R.id.statusMessage)
         btnRecord = findViewById(R.id.btnRecord)
         btnStop = findViewById(R.id.btnStop)
@@ -89,6 +85,11 @@ class MainActivity : AppCompatActivity() {
     private fun startPlaying() {
         mediaPlayer = MediaPlayer().apply {
             try {
+                statusMessage.text = "Reproduciendo audio..."
+                btnStop.isEnabled = false
+                btnRecord.isEnabled = false
+                btnPlay.isEnabled = false
+                btnStopPlay.isEnabled = true
                 setDataSource(audioFilePath)
                 prepare()
                 start()
@@ -99,25 +100,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopPlaying() {
+        statusMessage.text = "Reproducción pausada"
+        btnStop.isEnabled = false
+        btnRecord.isEnabled = true
+        btnPlay.isEnabled = true
+        btnStopPlay.isEnabled = false
         mediaPlayer?.release()
         mediaPlayer = null
     }
 
     private fun startRecording() {
-        // Verificar si tenemos el permiso
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
             mediaRecorder = MediaRecorder().apply {
                 try {
-                    setAudioSource(MediaRecorder.AudioSource.MIC)  // Fuente de audio: MIC
-                    setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)  // Formato de salida
-                    setOutputFile(fileName)  // Archivo de salida
-                    setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)  // Codificador de audio
+                    setAudioSource(MediaRecorder.AudioSource.MIC)
+                    setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+                    setOutputFile(fileName)
+                    setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
 
                     prepare()
                     start()
                     Log.d(LOG_TAG, "Recording started")
 
                     statusMessage.text = "Grabando..."
+                    btnStop.isEnabled = true
+                    btnRecord.isEnabled = false
                 } catch (e: IOException) {
                     Log.e(LOG_TAG, "prepare() failed: ${e.message}")
                 } catch (e: IllegalStateException) {
@@ -134,7 +141,12 @@ class MainActivity : AppCompatActivity() {
     private fun stopRecording() {
         mediaRecorder?.apply {
             stop()
+            statusMessage.text = "Audio finalizado"
+            btnStop.isEnabled = false
+            btnRecord.isEnabled = true
+            btnPlay.isEnabled = true
             release()
+
         }
         mediaRecorder = null
         Log.d(LOG_TAG, "Recording stopped")
